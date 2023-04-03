@@ -51,18 +51,69 @@
 #     - Refactor your solution to keep your main method under 5 lines. Use helper methods.
 #     - Write a test suite to prove that your solution works.
 
-def capitalize_every_other_word
-  sentence_array = sentence.split(' ')
-  sentence_array.each do |word|
-    if sentence_array.index(word) % 2 == 0
-      word.capitalize!
-    end
-  end
-  transformed = sentence_array.join(" ")
+# def capitalize_every_other_word
+#   sentence_array = sentence.split(' ')
+#   sentence_array.each do |word|
+#     if sentence_array.index(word) % 2 == 0
+#       word.capitalize!
+#     end
+#   end
+#   transformed = sentence_array.join(" ")
+# end
+
+# #perhaps try with index(0) or index.even? if index % 2 == 0, word.upcase, end
+
+# # def capitalize_words(string)
+# #  sentence.split.map(&:capitalize).join(' ')
+# # end
+
+#Hash Practice 1: Using the two hashes below, 
+#write a method that takes a state name ("Oregon") and 
+#outputs its abbreviation ("OR"). 
+
+#(For extra practice, write another method that takes a 
+#state abbreviation ("OR") and outputs its capital ("Salem").)
+
+#Then, write a method that takes a state name ("Oregon"), 
+#and returns its capital ("Salem").
+
+
+
+
+
+def state_abbreviation(state)
+  states = {"Oregon" => "OR",
+          "Alabama" => "AL",
+          "New Jersey" => "NJ",
+          "Colorado" => "CO"}
+
+  states[state]
 end
 
-#perhaps try with index(0) or index.even? if index % 2 == 0, word.upcase, end
+def state_capital(state_abbv)
+  capitals = {"OR" => "Salem",
+  "AL" => "Montgomery",
+  "NJ" => "Trenton",
+  "CO" => "Denver"}
 
-# def capitalize_words(string)
-#  sentence.split.map(&:capitalize).join(' ')
-# end
+  capitals[state_abbv]
+end
+
+def call_capital_from_state(state)
+  states    = {"Oregon" => "OR",
+            "Alabama" => "AL",
+            "New Jersey" => "NJ",
+            "Colorado" => "CO"}
+
+  capitals  = {"OR" => "Salem",
+            "AL" => "Montgomery",
+            "NJ" => "Trenton",
+            "CO" => "Denver"}
+
+  capitals[states[state]]
+end
+
+
+p state_abbreviation("Oregon")
+p state_capital("OR")
+p call_capital_from_state("Oregon")
