@@ -113,7 +113,21 @@ def call_capital_from_state(state)
   capitals[states[state]]
 end
 
+def get_state_name (state_capital)
+  states    = {"Oregon" => "OR",
+              "Alabama" => "AL",
+              "New Jersey" => "NJ",
+              "Colorado" => "CO"}
 
-p state_abbreviation("Oregon")
-p state_capital("OR")
-p call_capital_from_state("Oregon")
+  capitals  = {"OR" => "Salem",
+              "AL" => "Montgomery",
+              "NJ" => "Trenton",
+              "CO" => "Denver"}
+
+  states.invert[capitals.invert[state_capital]]
+
+end
+# p state_abbreviation("Oregon")
+# p state_capital("OR")
+# p call_capital_from_state("Oregon")
+p get_state_name("Trenton")

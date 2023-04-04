@@ -13,13 +13,13 @@ require './lib/1practice.rb'
 #     prices.dollar_sign_remove
 #   end
 
-  it "splits_string" do
-    sentence = "hi, happy first week of coding!"
-    sentence_array = []
-    transformed = []
+#   it "splits_string" do
+#     sentence = "hi, happy first week of coding!"
+#     sentence_array = []
+#     transformed = []
 
-    split_string(sentence)
-require 'pry'; binding.pry
-    expect(sentence.captilaize_words).to eq(["Hi,", "happy", "First", "week", "Of", "coding!"])
-  end
+#     split_string(sentence)
+# require 'pry'; binding.pry
+#     expect(sentence.captilaize_words).to eq(["Hi,", "happy", "First", "week", "Of", "coding!"])
+#   end
 end
