@@ -81,53 +81,74 @@
 
 
 
-def state_abbreviation(state)
-  states = {"Oregon" => "OR",
-          "Alabama" => "AL",
-          "New Jersey" => "NJ",
-          "Colorado" => "CO"}
+# def state_abbreviation(state)
+#   states = {"Oregon" => "OR",
+#           "Alabama" => "AL",
+#           "New Jersey" => "NJ",
+#           "Colorado" => "CO"}
 
-  states[state]
+#   states[state]
+# end
+
+# def state_capital(state_abbv)
+#   capitals = {"OR" => "Salem",
+#   "AL" => "Montgomery",
+#   "NJ" => "Trenton",
+#   "CO" => "Denver"}
+
+#   capitals[state_abbv]
+# end
+
+# def call_capital_from_state(state)
+#   states    = {"Oregon" => "OR",
+#             "Alabama" => "AL",
+#             "New Jersey" => "NJ",
+#             "Colorado" => "CO"}
+
+#   capitals  = {"OR" => "Salem",
+#             "AL" => "Montgomery",
+#             "NJ" => "Trenton",
+#             "CO" => "Denver"}
+
+#   capitals[states[state]]
+# end
+
+# def get_state_name (state_capital)
+#   states    = {"Oregon" => "OR",
+#               "Alabama" => "AL",
+#               "New Jersey" => "NJ",
+#               "Colorado" => "CO"}
+
+#   capitals  = {"OR" => "Salem",
+#               "AL" => "Montgomery",
+#               "NJ" => "Trenton",
+#               "CO" => "Denver"}
+
+#   states.invert[capitals.invert[state_capital]]
+
+# end
+# # p state_abbreviation("Oregon")
+# # p state_capital("OR")
+# # p call_capital_from_state("Oregon")
+# p get_state_name("Trenton")
+
+
+#Hash Phonebook (Part 1): Create a phonebook using a hash! 
+#Your book/hash should have least 5 different people's phone numbers.
+class PhoneBook
+  attr_reader :phonebook
+  def initialize(phonebook_details)
+    @phonebook = phonebook_details
+  end
+  
+  def add_entry(name, phone_number)
+    require 'pry'; binding.pry
+    @phonebook[name.to_sym] = phone_number
+  end
+  
 end
+    
+#Then, write a method that adds a new entry to your phonebook.
 
-def state_capital(state_abbv)
-  capitals = {"OR" => "Salem",
-  "AL" => "Montgomery",
-  "NJ" => "Trenton",
-  "CO" => "Denver"}
 
-  capitals[state_abbv]
-end
-
-def call_capital_from_state(state)
-  states    = {"Oregon" => "OR",
-            "Alabama" => "AL",
-            "New Jersey" => "NJ",
-            "Colorado" => "CO"}
-
-  capitals  = {"OR" => "Salem",
-            "AL" => "Montgomery",
-            "NJ" => "Trenton",
-            "CO" => "Denver"}
-
-  capitals[states[state]]
-end
-
-def get_state_name (state_capital)
-  states    = {"Oregon" => "OR",
-              "Alabama" => "AL",
-              "New Jersey" => "NJ",
-              "Colorado" => "CO"}
-
-  capitals  = {"OR" => "Salem",
-              "AL" => "Montgomery",
-              "NJ" => "Trenton",
-              "CO" => "Denver"}
-
-  states.invert[capitals.invert[state_capital]]
-
-end
-# p state_abbreviation("Oregon")
-# p state_capital("OR")
-# p call_capital_from_state("Oregon")
-p get_state_name("Trenton")
+#At the end, you should have at least 6 total entries in your phonebook.
