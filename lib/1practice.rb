@@ -135,20 +135,43 @@
 
 #Hash Phonebook (Part 1): Create a phonebook using a hash! 
 #Your book/hash should have least 5 different people's phone numbers.
+# class PhoneBook
+#   attr_reader :entries
+#   def initialize(entries)
+#     @entries = entries
+#   end
+  
+#   def add_entry(name, phone_number)
+#     @entries[name.to_sym] = phone_number
+#   end
+  
+# end
+    
+#Hash Phonebook PART DEUX: 
+#Create a phonebook using a hash! 
+#Your book/hash should have least 5 different people's phone numbers. 
+#The phone numbers should be represented by **arrays**.
+#Ex: phonebook = {"Adam": [555, 1234], "Briona": [123, 5555], "Charles": …}
+#Then, write a method that adds a new entry to your phonebook.
+#Ex: add_number("Name", [419, 5540])
+#Finally, write a method that takes a string name, 
+#and returns a formatted phone number.Ex: call("Adam") => "555-1234"
 class PhoneBook
-  attr_reader :phonebook
-  def initialize(phonebook_details)
-    @phonebook = phonebook_details
+  attr_reader :entries
+  def initialize(entries)
+    @entries = entries
   end
   
   def add_entry(name, phone_number)
-    require 'pry'; binding.pry
-    @phonebook[name.to_sym] = phone_number
+    @entries[name.to_sym] = phone_number
   end
-  
+
+  def formatted_phone(name)
+    if @entries.has_key?(name.to_sym)
+      string_nums = @entries[name.to_sym].map do |number| 
+        number.to_s
+      end
+      string_nums.join("-")
+    end
+  end
 end
-    
-#Then, write a method that adds a new entry to your phonebook.
-
-
-#At the end, you should have at least 6 total entries in your phonebook.
