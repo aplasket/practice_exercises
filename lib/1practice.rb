@@ -156,22 +156,44 @@
 #Ex: add_number("Name", [419, 5540])
 #Finally, write a method that takes a string name, 
 #and returns a formatted phone number.Ex: call("Adam") => "555-1234"
-class PhoneBook
-  attr_reader :entries
-  def initialize(entries)
-    @entries = entries
-  end
+# class PhoneBook
+#   attr_reader :entries
+#   def initialize(entries)
+#     @entries = entries
+#   end
   
-  def add_entry(name, phone_number)
-    @entries[name.to_sym] = phone_number
-  end
+#   def add_entry(name, phone_number)
+#     @entries[name.to_sym] = phone_number
+#   end
 
-  def formatted_phone(name)
-    if @entries.has_key?(name.to_sym)
-      string_nums = @entries[name.to_sym].map do |number| 
-        number.to_s
-      end
-      string_nums.join("-")
-    end
-  end
-end
+#   def formatted_phone(name)
+#     if @entries.has_key?(name.to_sym)
+#       string_nums = @entries[name.to_sym].map do |number| 
+#         number.to_s
+#       end
+#       string_nums.join("-")
+#     end
+#   end
+# end
+
+#exercise april week 4 day 2
+#Organizing with Hashes! 
+#Create a Hash that stores all the items on your desk. 
+#Anything that has more than 1 thing inside should be represented by 
+#   its own key/value pair. 
+# Single items ("pen") can be described in its value ("pen" => "black").
+#Ex: desk = { "pencil": "#2", :mousepad => ["mouse", "wrist rest"], :computer => ["chip", "fan"], …}
+
+#Then, write a method that lists the items out in order. 
+#If an item has more than 1 thing inside of it, 
+#make it display underneath and tabbed over
+
+require 'JSON'
+desk = { pencil: "#2", 
+        mousepad:["mouse", "wrist rest"], 
+        computer:["chip", "fan"],
+        waterbottle: "pink",
+        keyboard: "wireless"}
+
+sorted_items = desk.sort.flatten
+puts JSON.pretty_generate(sorted_items)
